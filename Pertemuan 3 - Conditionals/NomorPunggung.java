@@ -3,46 +3,46 @@ public class NomorPunggung {
   public static class Human {
     public int pushUpDurationInMinute;
     public int plankDurationInMinute;
-    public int runingRangeInKM;
+    public int runningDurationInMinute;
 
     Human(
       int pushUpDurationInMinute, 
       int plankDurationInMinute,
-      int runingRangeInKM
+      int runningDurationInMinute
     ) {
       this.pushUpDurationInMinute = pushUpDurationInMinute;
       this.plankDurationInMinute = plankDurationInMinute;
-      this.runingRangeInKM = runingRangeInKM;
+      this.runningDurationInMinute = runningDurationInMinute;
     }
   }
 
 
 
   public static void main(String[] args) {
-    Human asep = new Human(30, 1, 1);
+    Human asep = new Human(60, 5, 5);
     getWorkoutSummary(asep);
   }
 
   public static void getWorkoutSummary(Human human) {
-    final double pushUpCaloriesLostInMinute = 6.666666666666667;
-    final float plankCaloriesLostInMinute = 5;
-    final float runningCaloriesLostInKM = 60;
+    final double pushUpCaloriesLostPerMinute = 6.666666666666667;
+    final float plankCaloriesLostPerMinute = 5;
+    final float runningCaloriesLostPerMinute = 60;
 
     int pushUpDuration = human.pushUpDurationInMinute;
     int plankDuration = human.plankDurationInMinute;
-    int runningRange = human.runingRangeInKM;
+    int runningDuration = human.runningDurationInMinute;
 
 
     System.out.println(
-     "Pushup anda menghilangkan " + (float) (pushUpCaloriesLostInMinute * pushUpDuration) + " kalori"
+     "Pushup anda menghilangkan " + (float) (pushUpCaloriesLostPerMinute * pushUpDuration) + " kalori"
     );
 
     System.out.println(
-     "Plank anda menghilangkan " + (float) (plankCaloriesLostInMinute * plankDuration) + " kalori"
+     "Plank anda menghilangkan " + (float) (plankCaloriesLostPerMinute * plankDuration) + " kalori"
     );
 
     System.out.println(
-     "Lari anda menghilangkan " + (float) (runningCaloriesLostInKM * runningRange) + " kalori"
+     "Lari anda menghilangkan " + (float) (runningCaloriesLostPerMinute * runningDuration) + " kalori"
     );
 
 
