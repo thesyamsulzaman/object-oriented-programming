@@ -2,14 +2,14 @@ public class WalkingDead {
   public static void main(String[] args) {
     Human ucup = null;
 
-    // Disini Zombie bisa di-instansiasi dengan class Human 
-    // karena Zombie juga adalah Human
+    // Disini Zombie bisa memiliki tipe data Human 
+    // karena Zombie sendiri juga adalah Human
     Human bradVicker = new Zombie("Brad Vicker", 100);
 
     Human rickGrimes = new Human("Rick Grimes", 100);
     Monster nemesis = new Monster("Nemesis", 1000, "Im fast as hell");
 
-    // Ucup bisa berubah menjadi monster walau ucup itu Human
+    // ucup bisa berubah menjadi Monster walau ucup itu tipe datanya Human
     ucup = nemesis;
 
     System.out.println(nemesis.getSuperPower());
