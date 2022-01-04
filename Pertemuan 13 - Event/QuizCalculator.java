@@ -84,17 +84,21 @@ public class QuizCalculator extends JFrame implements MouseListener, ActionListe
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        int userInputValue = Integer.parseInt(userInput.getText());
+        try {
+            int userInputValue = Integer.parseInt(userInput.getText());
 
-        if (ae.getSource() == checkButton) {
-            if (randomFirstValue + randomSecondValue == userInputValue) {
-                resultText.setText("Selamat, jawaban anda benar !!");
-                getContentPane().setBackground(Color.green);
-            } else {
-                resultText.setText("Maaf, jawaban anda salah !!");
-                getContentPane().setBackground(Color.red);
+            if (ae.getSource() == checkButton) {
+                if (randomFirstValue + randomSecondValue == userInputValue) {
+                    resultText.setText("Selamat, jawaban anda benar !!");
+                    getContentPane().setBackground(Color.green);
+                } else {
+                    resultText.setText("Maaf, jawaban anda salah !!");
+                    getContentPane().setBackground(Color.red);
+                }
             }
-
+        } catch (NumberFormatException err) {
+            JFrame jFrame = new JFrame();
+            JOptionPane.showMessageDialog(jFrame, "Masukan jawaban anda");
         }
 
     }
