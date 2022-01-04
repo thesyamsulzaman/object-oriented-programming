@@ -75,7 +75,6 @@ public class Kalkulator extends JFrame {
      */
     public static void main(String[] args) {
         Kalkulator kalkulator = new Kalkulator();
-
     }
 
 }
